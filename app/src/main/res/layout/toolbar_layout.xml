@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Este layout contiene únicamente la Toolbar reutilizable.
+    El elemento raíz es la propia Toolbar.
+    Define la altura de la Toolbar usando un atributo del tema actual.
+    Signo de interrogación: Indica una referencia a un atributo del tema.
+    attr/: Prefijo que indica que es un "atributo".
+    actionBarSize: Nombre del atributo que define la altura estándar para las barras de herramientas, adaptándose al dispositivo y la orientación.
+
+    Para usarla, añadirla con la etiqueta <include>
+    -->
+<com.google.android.material.appbar.MaterialToolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:background="@color/verde_pikmin"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    app:title="@string/app_name" />
+
+

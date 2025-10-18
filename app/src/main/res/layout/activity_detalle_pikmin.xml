@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Layout principal que envuelve los distintos elementos-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detallePikminActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetallePikminActivity">
+
+    <!--Toolbar personalizada-->
+    <include
+        android:id="@+id/toolbar_layout"
+        layout="@layout/toolbar_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--ScrollView que contiene el resto de elementos. Permite hacer scroll si el contenido es muy largo-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="?attr/colorSurface"
+        android:fillViewport="true"
+        android:paddingBottom="24dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_layout">
+
+        <!--LinearLayout que contiene todos los elementos-->
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            tools:context=".DetallePikminActivity">
+
+            <!--TextView que contiene el nombre del pikmin-->
+            <TextView
+                android:id="@+id/nombreDetalle"
+                style="@style/NombreDetalle" />
+            <!--TextView que contiene el nombre científico del pikmin-->
+            <TextView
+                android:id="@+id/nombreCientificoDetalle"
+                style="@style/NombreCientificoDetalle" />
+            <!--ImageView que contiene la imagen del pikmin-->
+            <ImageView
+                android:id="@+id/imagenDetalle"
+                style="@style/ImagenDetalle"
+                android:contentDescription="@string/imagen_del_pikmin_seleccionado" />
+            <!--TextView que contiene la etiqueta Familia del pikmin-->
+            <TextView
+                android:id="@+id/label_familia"
+                style="@style/EtiquetasDetalle"
+                android:layout_gravity="center"
+                android:text="@string/label_familia" />
+            <!--TextView que contiene la familia del pikmin-->
+            <TextView
+                android:id="@+id/familiaDetalle"
+                style="@style/FamiliaDetalle" />
+            <!--TableLayout que contiene los checkboxes de terrestre, acuático y aéreo-->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!-- Fila 0 de la tabla que contiene las etiquetas de los checkboxes-->
+                <TableRow style="@style/TablasDetalle">
+                    <!--Etiquetas de los checkboxes-->
+                    <TextView
+                        style="@style/EtiquetasDetalle"
+                        android:layout_weight="1"
+                        android:text="@string/terrestre" />
+
+                    <TextView
+                        style="@style/EtiquetasDetalle"
+                        android:layout_weight="1"
+                        android:text="@string/acuatico" />
+
+                    <TextView
+                        style="@style/EtiquetasDetalle"
+                        android:layout_weight="1"
+                        android:text="@string/aereo" />
+                </TableRow>
+                <!-- Fila 1 de la tabla que contiene los checkboxes-->
+                <TableRow
+                    style="@style/TablasDetalle"
+                    android:layout_marginTop="0dp">
+                    <!--Checkboxes-->
+                    <CheckBox
+                        android:id="@+id/checkBoxTerrestre"
+                        style="@style/CheckBoxDetalle" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxAcuatico"
+                        style="@style/CheckBoxDetalle" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxAereo"
+                        style="@style/CheckBoxDetalle" />
+                </TableRow>
+            </TableLayout>
+
+            <!--TextView que contiene la etiqueta Descripción del pikmin-->
+            <TextView
+                android:id="@+id/label_descripcion"
+                style="@style/EtiquetasDetalle"
+                android:text="@string/label_descripcion" />
+            <!--TextView que contiene la descripción del pikmin-->
+            <TextView
+                android:id="@+id/descripcionDetalle"
+                style="@style/TextoConBorde" />
+            <!--TextView que contiene la etiqueta Característica 1 del pikmin-->
+            <TextView
+                android:id="@+id/label_caracteristica1"
+                style="@style/EtiquetasDetalle"
+                android:text="@string/label_caracteristica1" />
+            <!--TextView que contiene la característica 1 del pikmin-->
+            <TextView
+                android:id="@+id/caracteristica1Detalle"
+                style="@style/TextoConBorde" />
+            <!--TextView que contiene la etiqueta Característica 2 del pikmin-->
+            <TextView
+                android:id="@+id/label_caracteristica2"
+                style="@style/EtiquetasDetalle"
+                android:text="@string/label_caracteristica2" />
+            <!--TextView que contiene la característica 2 del pikmin-->
+            <TextView
+                android:id="@+id/caracteristica2Detalle"
+                style="@style/TextoConBorde" />
+            <!--TextView que contiene la etiqueta Característica 3 del pikmin-->
+            <TextView
+                android:id="@+id/label_caracteristica3"
+                style="@style/EtiquetasDetalle"
+                android:text="@string/label_caracteristica3" />
+            <!--TextView que contiene la característica 3 del pikmin-->
+            <TextView
+                android:id="@+id/caracteristica3Detalle"
+                style="@style/TextoConBorde" />
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
